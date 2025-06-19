@@ -1,1 +1,85 @@
-we open soon
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ouverture Prochaine</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      gap: 2rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      animation: fadeInDown 1.2s ease-out;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .ads {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      animation: fadeIn 2.5s ease-out;
+    }
+
+    iframe {
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00000055;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .footer {
+      font-size: 0.9rem;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚧 On ouvre bientôt ! 🚀</h1>
+  <p>Notre site est presque prêt… restez connectés pour profiter de nos services dès le lancement !</p>
+
+  <div class="ads">
+    <iframe data-aa='2395715' src='//ad.a-ads.com/2395715?size=728x90' style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+    <iframe data-aa='2395715' src='//ad.a-ads.com/2395715?size=468x60' style='width:468px; height:60px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+    <iframe data-aa='2395715' src='//ad.a-ads.com/2395715?size=300x250' style='width:300px; height:250px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+  </div>
+
+  <div class="footer">© 2025 - VotreNomSite.com</div>
+</body>
+</html>
