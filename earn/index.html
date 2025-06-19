@@ -5,23 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ouverture Prochaine</title>
   <style>
-    :root {
-      --main-bg: linear-gradient(to right, #1e3c72, #2a5298);
-      --text-color: #fff;
-      --accent: #00ffc8;
-    }
-
     body {
       margin: 0;
       padding: 0;
-      background: var(--main-bg);
+      background: linear-gradient(to right, #1e3c72, #2a5298);
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      color: var(--text-color);
       padding: 2rem 1rem;
     }
 
@@ -41,23 +33,29 @@
     }
 
     .ads {
-      width: 100%;
-      max-width: 900px;
       display: flex;
       flex-direction: column;
       gap: 2rem;
       align-items: center;
-      justify-content: center;
-      animation: fadeIn 2.5s ease-in-out;
     }
 
-    .ads iframe {
+    .ad-container {
       width: 100%;
-      max-width: 728px;
+      overflow-x: auto;
+    }
+
+    .ad-inner {
+      width: 728px;
+      height: 90px;
+      margin: auto;
+    }
+
+    .ad-inner iframe {
+      width: 728px;
       height: 90px;
       border: none;
-      overflow: hidden;
       background: transparent;
+      display: block;
     }
 
     .footer {
@@ -68,35 +66,13 @@
     }
 
     @keyframes fadeInDown {
-      from {
-        transform: translateY(-30px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      from { transform: translateY(-30px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .ads iframe {
-        max-width: 100%;
-        height: auto;
-        aspect-ratio: 728 / 90;
-      }
+      from { opacity: 0; }
+      to   { opacity: 1; }
     }
   </style>
 </head>
@@ -105,9 +81,21 @@
   <p>Notre site est presque prêt… Revenez très bientôt pour découvrir nos services exclusifs !</p>
 
   <div class="ads">
-    <iframe data-aa='2395715' src='//ad.a-ads.com/2395715?size=728x90'></iframe>
-    <iframe data-aa='2395715' src='//ad.a-ads.com/2395715?size=728x90'></iframe>
-    <iframe data-aa='2395715' src='//ad.a-ads.com/2395715?size=728x90'></iframe>
+    <div class="ad-container">
+      <div class="ad-inner">
+        <iframe data-aa='2395715' src='//ad.a-ads.com/2395715?size=728x90'></iframe>
+      </div>
+    </div>
+    <div class="ad-container">
+      <div class="ad-inner">
+        <iframe data-aa='2395715' src='//ad.a-ads.com/2395715?size=728x90'></iframe>
+      </div>
+    </div>
+    <div class="ad-container">
+      <div class="ad-inner">
+        <iframe data-aa='2395715' src='//ad.a-ads.com/2395715?size=728x90'></iframe>
+      </div>
+    </div>
   </div>
 
   <div class="footer">Satanas1275 © 2025</div>
