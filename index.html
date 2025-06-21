@@ -268,16 +268,18 @@
       if (!email) return;
 
       const msg = {
-        content: `${email} a commandé un **${type}** (${detail}, ${prix}).\nStatut : *En attente*`
+        content: `${email} a commandé un **${type}**\n> ${detail}\n> ${prix}\n\nStatut : *En attente*`
       };
 
       fetch(WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(msg)
+      }).then(() => {
+        alert("Commande envoyée ! Je vous réponds sous 24h.");
+      }).catch(() => {
+        alert("Erreur lors de l'envoi de la commande.");
       });
-
-      alert("Commande envoyée ! Je vous réponds sous 24h.");
     });
   });
 
@@ -288,20 +290,28 @@
     const details = document.getElementById("details").value;
     const options = Array.from(document.querySelectorAll("input[name='custom']:checked")).map(el => el.value);
 
+    if (!email || options.length === 0 || !details) {
+      alert("Veuillez remplir tous les champs requis.");
+      return;
+    }
+
     const msg = {
-      content: `${email} a commandé un projet custom contenant :\n- ${options.join("\n- ")}\n\nDétails : ${details}\nStatut : *En attente*`
+      content: `${email} a commandé un projet **custom** avec :\n- ${options.join("\n- ")}\n\n📄 Détails : ${details}\n\nStatut : *En attente*`
     };
 
     fetch(WEBHOOK_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(msg)
+    }).then(() => {
+      document.getElementById("orderMsg").innerHTML = "Merci pour votre demande !<br>Je vous réponds sous 24h.";
+      e.target.reset();
+    }).catch(() => {
+      document.getElementById("orderMsg").innerHTML = "Erreur lors de l'envoi. Réessayez plus tard.";
     });
-
-    document.getElementById("orderMsg").innerHTML = "Merci pour votre demande !<br>Je vous réponds sous 24h.";
-    e.target.reset();
   });
 </script>
+
 
 </body>
 </html>
