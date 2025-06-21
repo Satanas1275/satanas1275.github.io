@@ -260,7 +260,7 @@
           content: `${email} a commandé un **${type}**\n> ${detail}\n> ${prix}\n\nStatut : *En attente*`
         };
 
-        fetch("WEBHOOK_URL", {
+        fetch("https://rocknite-studio.alwaysdata.net/webhook/webhook.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(msg)
