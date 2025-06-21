@@ -4,314 +4,302 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Satanas1275 - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: #fff;
-      line-height: 1.6;
+      background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+      color: #e5e7eb;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
     }
-
-    header {
-      background: #1f1f1f;
-      padding: 2rem;
-      text-align: center;
+    .glow {
+      box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
     }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
-    }
-
-    .section-title {
-      font-size: 1.8rem;
-      margin-top: 2rem;
-      border-bottom: 2px solid #555;
-      padding-bottom: 0.5rem;
-    }
-
-    .skills, .projects {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .skill, .project-card {
-      background: #1e1e1e;
-      padding: 1rem;
-      border-radius: 12px;
-      flex: 1 1 200px;
-    }
-
-    .project-links a {
-      color: #4caf50;
-      text-decoration: none;
-    }
-
-    .order-section {
-      margin-top: 3rem;
-    }
-
-    .order-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 2rem;
-    }
-
-    .order-table th, .order-table td {
-      border: 1px solid #333;
-      padding: 0.75rem;
-      text-align: left;
-    }
-
-    .order-table button {
-      background: #4caf50;
-      border: none;
-      padding: 0.5rem 1rem;
-      color: white;
+    .skill-progress::-webkit-progress-value {
+      background: linear-gradient(to right, #4caf50, #81c784);
       border-radius: 8px;
-      cursor: pointer;
     }
-
-    .order-form {
-      background: #1e1e1e;
-      padding: 1rem;
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .order-form input,
-    .order-form textarea,
-    .order-form select {
-      padding: 0.5rem;
+    .skill-progress::-webkit-progress-bar {
+      background: #2d2d2d;
       border-radius: 8px;
-      border: 1px solid #444;
-      background: #2a2a2a;
-      color: #fff;
     }
-
-    .order-form button {
-      padding: 0.75rem;
-      background: #4caf50;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
+    .animate-slide-in {
+      animation: slideIn 0.5s ease-out;
     }
-
-    #customOptions {
-      background: #2a2a2a;
-      border-radius: 8px;
-      padding: 1rem;
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
-
-    #customOptions label {
-      display: block;
-      margin-bottom: 0.5rem;
-      cursor: pointer;
+    .project-card:hover {
+      transform: translateY(-5px);
+      transition: transform 0.3s ease;
     }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #1f1f1f;
-      margin-top: 3rem;
+    .order-table tr:hover {
+      background: rgba(76, 175, 80, 0.1);
     }
-
-    #orderMsg {
-      margin-top: 1rem;
-      font-weight: bold;
-      color: #4caf50;
-      text-align: center;
+    .btn-glow:hover {
+      box-shadow: 0 0 20px rgba(76, 175, 80, 0.7);
+      transform: scale(1.05);
     }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Satanas1275</h1>
-    <p>Développeur web, créateur de serveurs Minecraft & passionné d'innovation</p>
+<body class="min-h-screen">
+  <header class="bg-gray-900 py-8 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-green-400 animate-slide-in">Satanas1275</h1>
+    <p class="mt-2 text-lg md:text-xl text-gray-300">Développeur web, créateur de serveurs Minecraft & passionné d'innovation</p>
   </header>
 
-  <div class="container">
-    <h2 class="section-title">Compétences</h2>
-    <div class="skills">
-      <div class="skill">HTML <span>(expert)</span></div>
-      <div class="skill">CSS <span>(avancé)</span></div>
-      <div class="skill">JavaScript <span>(avancé)</span></div>
-      <div class="skill">Python <span>(bon niveau)</span></div>
-      <div class="skill">Java <span>(débutant)</span></div>
-      <div class="skill">Kotlin <span>(débutant)</span></div>
-      <div class="skill">Setup Serveur Minecraft <span>(expert)</span></div>
-      <div class="skill">Gestion long terme <span>(expert)</span></div>
-      <div class="skill">4 ans d'expérience mais toujours en apprentissage !</div>
-    </div>
-
-    <h2 class="section-title">Projets réalisés</h2>
-    <div class="projects">
-      <div class="project-card">
-        <div class="project-title">ROCKNITE-STUDIO</div>
-        <div>Studio de création de jeux vidéo, maintenant aussi développeur d'infrastructures Minecraft.</div>
-        <div class="project-links">
-          <a href="https://rocknite-studio.github.io" target="_blank">Site web</a>
-        </div>
+  <div class="container max-w-5xl mx-auto px-4 py-8">
+    <h2 class="section-title text-3xl font-semibold border-b-2 border-green-500 pb-2 mb-6 animate-slide-in">Compétences</h2>
+    <div class="skills grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="skill bg-gray-800 p-4 rounded-xl glow animate-slide-in">
+        <label class="block text-lg font-medium mb-2">HTML (expert)</label>
+        <progress class="skill-progress w-full h-5 rounded-lg" value="100" max="100"></progress>
       </div>
-      <div class="project-card">
-        <div class="project-title">ROCKNITE NEXUS</div>
-        <div>Infrastructure Minecraft 1.21.5 : FunnyTown, bientôt Ametyste & Siphonium (PvP Faction Moddé).</div>
-        <div class="project-links">
-          <a href="https://discord.gg/txkXVnpZWb" target="_blank">Discord</a>
-        </div>
+      <div class="skill bg-gray-800 p-4 rounded-xl glow animate-slide-in">
+        <label class="block text-lg font-medium mb-2">CSS (avancé)</label>
+        <progress class="skill-progress w-full h-5 rounded-lg" value="80" max="100"></progress>
       </div>
-      <div class="project-card">
-        <div class="project-title">ROCKNITE TV</div>
-        <div>Plateforme de streaming de films faits maison (gratuit avec pubs, payant sans pub, HD/4K premium).</div>
-        <div class="project-links">
-          <span style="color:#aaa;">En développement</span>
-        </div>
+      <div class="skill bg-gray-800 p-4 rounded-xl glow animate-slide-in">
+        <label class="block text-lg font-medium mb-2">JavaScript (avancé)</label>
+        <progress class="skill-progress w-full h-5 rounded-lg" value="75" max="100"></progress>
+      </div>
+      <div class="skill bg-gray-800 p-4 rounded-xl glow animate-slide-in">
+        <label class="block text-lg font-medium mb-2">Python (bon niveau)</label>
+        <progress class="skill-progress w-full h-5 rounded-lg" value="70" max="100"></progress>
+      </div>
+      <div class="skill bg-gray-800 p-4 rounded-xl glow animate-slide-in">
+        <label class="block text-lg font-medium mb-2">Java (débutant)</label>
+        <progress class="skill-progress w-full h-5 rounded-lg" value="40" max="100"></progress>
+      </div>
+      <div class="skill bg-gray-800 p-4 rounded-xl glow animate-slide-in">
+        <label class="block text-lg font-medium mb-2">Kotlin (débutant)</label>
+        <progress class="skill-progress w-full h-5 rounded-lg" value="30" max="100"></progress>
+      </div>
+      <div class="skill bg-gray-800 p-4 rounded-xl glow animate-slide-in">
+        <label class="block text-lg font-medium mb-2">Setup Serveur Minecraft (expert)</label>
+        <progress class="skill-progress w-full h-5 rounded-lg" value="95" max="100"></progress>
+      </div>
+      <div class="skill bg-gray-800 p-4 rounded-xl glow animate-slide-in">
+        <label class="block text-lg font-medium mb-2">Gestion long terme (expert)</label>
+        <progress class="skill-progress w-full h-5 rounded-lg" value="90" max="100"></progress>
       </div>
     </div>
 
-    <div class="order-section">
-      <h3>Commander un projet</h3>
-      <table class="order-table">
-        <tr><th>Type</th><th>Détail</th><th>Prix</th><th></th></tr>
-        <tr>
-          <td>Site vitrine</td><td>10 pages max, full HTML/CSS/JS</td><td>10-25€</td>
-          <td><button>Commander</button></td>
-        </tr>
-        <tr>
-          <td>E-commerce</td><td>Vitrine + achat + backend Python + panel</td><td>30-40€</td>
-          <td><button>Commander</button></td>
-        </tr>
-        <tr>
-          <td>App web Android/iPhone</td><td>15 pages max</td><td>20-40€</td>
-          <td><button>Commander</button></td>
-        </tr>
-        <tr>
-          <td>App Python/Backend/Automatisation/Bot</td><td>Traitement de données, sur mesure</td><td>20-60€</td>
-          <td><button>Commander</button></td>
-        </tr>
+    <h2 class="section-title text-3xl font-semibold border-b-2 border-green-500 pb-2 mb-6 mt-12 animate-slide-in">Projets réalisés</h2>
+    <div class="projects flex flex-wrap gap-4">
+      <div class="project-card bg-gray-800 p-4 rounded-xl glow flex-1 min-w-[280px] transition-all">
+        <div class="project-title text-xl font-bold text-green-400">ROCKNITE-STUDIO</div>
+        <div class="text-gray-300">Studio de création de jeux vidéo, maintenant aussi développeur d'infrastructures Minecraft.</div>
+        <div class="project-links mt-2">
+          <a href="https://rocknite-studio.github.io" target="_blank" class="text-green-400 hover:text-green-300">Site web</a>
+        </div>
+      </div>
+      <div class="project-card bg-gray-800 p-4 rounded-xl glow flex-1 min-w-[280px] transition-all">
+        <div class="project-title text-xl font-bold text-green-400">ROCKNITE NEXUS</div>
+        <div class="text-gray-300">Infrastructure Minecraft 1.21.5 : FunnyTown, bientôt Ametyste & Siphonium (PvP Faction Moddé).</div>
+        <div class="project-links mt-2">
+          <a href="https://discord.gg/txkXVnpZWb" target="_blank" class="text-green-400 hover:text-green-300">Discord</a>
+        </div>
+      </div>
+      <div class="project-card bg-gray-800 p-4 rounded-xl glow flex-1 min-w-[280px] transition-all">
+        <div class="project-title text-xl font-bold text-green-400">ROCKNITE TV</div>
+        <div class="text-gray-300">Plateforme de streaming de films faits maison (gratuit avec pubs, payant sans pub, HD/4K premium).</div>
+        <div class="project-links mt-2">
+          <span class="text-gray-500">En développement</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-section mt-12">
+      <h3 class="text-2xl font-semibold mb-4 animate-slide-in">Commander un projet</h3>
+      <table class="order-table w-full border-collapse mb-8">
+        <thead>
+          <tr class="bg-gray-700">
+            <th class="border border-gray-600 p-3 text-left">Type</th>
+            <th class="border border-gray-600 p-3 text-left">Détail</th>
+            <th class="border border-gray-600 p-3 text-left">Prix</th>
+            <th class="border border-gray-600 p-3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border border-gray-600 p-3">Site vitrine</td>
+            <td class="border border-gray-600 p-3">10 pages max, full HTML/CSS/JS</td>
+            <td class="border border-gray-600 p-3">10-25€</td>
+            <td class="border border-gray-600 p-3"><button class="btn-glow bg-green-500 text-white px-4 py-2 rounded-lg transition-all">Commander</button></td>
+          </tr>
+          <tr>
+            <td class="border border-gray-600 p-3">E-commerce</td>
+            <td class="border border-gray-600 p-3">Vitrine + achat + backend Python + panel</td>
+            <td class="border border-gray-600 p-3">30-40€</td>
+            <td class="border border-gray-600 p-3"><button class="btn-glow bg-green-500 text-white px-4 py-2 rounded-lg transition-all">Commander</button></td>
+          </tr>
+          <tr>
+            <td class="border border-gray-600 p-3">App web Android/iPhone</td>
+            <td class="border border-gray-600 p-3">15 pages max</td>
+            <td class="border border-gray-600 p-3">20-40€</td>
+            <td class="border border-gray-600 p-3"><button class="btn-glow bg-green-500 text-white px-4 py-2 rounded-lg transition-all">Commander</button></td>
+          </tr>
+          <tr>
+            <td class="border border-gray-600 p-3">App Python/Backend/Automatisation/Bot</td>
+            <td class="border border-gray-600 p-3">Traitement de données, sur mesure</td>
+            <td class="border border-gray-600 p-3">20-60€</td>
+            <td class="border border-gray-600 p-3"><button class="btn-glow bg-green-500 text-white px-4 py-2 rounded-lg transition-all">Commander</button></td>
+          </tr>
+        </tbody>
       </table>
 
-      <h3>Commander un hébergement (adresse .serveo.net incluse)</h3>
-      <table class="order-table">
-        <tr><th>Type</th><th>Détail</th><th>Prix</th><th></th></tr>
-        <tr>
-          <td>VPS 1</td><td>400%, 2GB RAM, 16GB SD</td><td>70€/an</td>
-          <td><button>Commander</button></td>
-        </tr>
-        <tr>
-          <td>VPS 2</td><td>400%, 4GB RAM, 16GB SD</td><td>80€/an</td>
-          <td><button>Commander</button></td>
-        </tr>
-        <tr>
-          <td>VPS 3</td><td>400%, 8GB RAM, 16GB SD</td><td>110€/an</td>
-          <td><button>Commander</button></td>
-        </tr>
-        <tr>
-          <td>WEB 1</td><td>Site HTML CSS JS</td><td>10€/an</td>
-          <td><button>Commander</button></td>
-        </tr>
-        <tr>
-          <td>WEB 2</td><td>Site HTML/CSS/JS + Python</td><td>15€/an</td>
-          <td><button>Commander</button></td>
-        </tr>
-        <tr>
-          <td>PY 1</td><td>App Python simple</td><td>10€/an</td>
-          <td><button>Commander</button></td>
-        </tr>
+      <h3 class="text-2xl font-semibold mb-4 animate-slide-in">Commander un hébergement (adresse .serveo.net incluse)</h3>
+      <table class="order-table w-full border-collapse mb-8">
+        <thead>
+          <tr class="bg-gray-700">
+            <th class="border border-gray-600 p-3 text-left">Type</th>
+            <th class="border border-gray-600 p-3 text-left">Détail</th>
+            <th class="border border-gray-600 p-3 text-left">Prix</th>
+            <th class="border border-gray-600 p-3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border border-gray-600 p-3">VPS 1</td>
+            <td class="border border-gray-600 p-3">400%, 2GB RAM, 16GB SD</td>
+            <td class="border border-gray-600 p-3">70€/an</td>
+            <td class="border border-gray-600 p-3"><button class="btn-glow bg-green-500 text-white px-4 py-2 rounded-lg transition-all">Commander</button></td>
+          </tr>
+          <tr>
+            <td class="border border-gray-600 p-3">VPS 2</td>
+            <td class="border border-gray-600 p-3">400%, 4GB RAM, 16GB SD</td>
+            <td class="border border-gray-600 p-3">80€/an</td>
+            <td class="border border-gray-600 p-3"><button class="btn-glow bg-green-500 text-white px-4 py-2 rounded-lg transition-all">Commander</button></td>
+          </tr>
+          <tr>
+            <td class="border border-gray-600 p-3">VPS 3</td>
+            <td class="border border-gray-600 p-3">400%, 8GB RAM, 16GB SD</td>
+            <td class="border border-gray-600 p-3">110€/an</td>
+            <td class="border border-gray-600 p-3"><button class="btn-glow bg-green-500 text-white px-4 py-2 rounded-lg transition-all">Commander</button></td>
+          </tr>
+          <tr>
+            <td class="border border-gray-600 p-3">WEB 1</td>
+            <td class="border border-gray-600 p-3">Site HTML CSS JS</td>
+            <td class="border border-gray-600 p-3">10€/an</td>
+            <td class="border border-gray-600 p-3"><button class="btn-glow bg-green-500 text-white px-4 py-2 rounded-lg transition-all">Commander</button></td>
+          </tr>
+          <tr>
+            <td class="border border-gray-600 p-3">WEB 2</td>
+            <td class="border border-gray-600 p-3">Site HTML/CSS/JS + Python</td>
+            <td class="border border-gray-600 p-3">15€/an</td>
+            <td class="border border-gray-600 p-3"><button class="btn-glow bg-green-500 text-white px-4 py-2 rounded-lg transition-all">Commander</button></td>
+          </tr>
+          <tr>
+            <td class="border border-gray-600 p-3">PY 1</td>
+            <td class="border border-gray-600 p-3">App Python simple</td>
+            <td class="border border-gray-600 p-3">10€/an</td>
+            <td class="border border-gray-600 p-3"><button class="btn-glow bg-green-500 text-white px-4 py-2 rounded-lg transition-all">Commander</button></td>
+          </tr>
+        </tbody>
       </table>
 
-      <form class="order-form" id="orderForm">
-        <label for="type">Projet personnalisé :</label>
-        <div id="customOptions">
-          <label><input type="checkbox" name="custom" value="Site vitrine" /> Site vitrine</label>
-          <label><input type="checkbox" name="custom" value="Page achat" /> Page achat</label>
-          <label><input type="checkbox" name="custom" value="App Android/iPhone" /> App Android/iPhone</label>
-          <label><input type="checkbox" name="custom" value="Panel web" /> Panel web</label>
-          <label><input type="checkbox" name="custom" value="Bot Discord" /> Bot Discord</label>
-          <label><input type="checkbox" name="custom" value="API Backend" /> API Backend</label>
+      <div class="order-form bg-gray-800 p-6 rounded-xl glow">
+        <h3 class="text-2xl font-semibold mb-4">Projet personnalisé</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <label class="flex items-center"><input type="checkbox" name="custom" value="Site vitrine" class="mr-2"> Site vitrine</label>
+          <label class="flex items-center"><input type="checkbox" name="custom" value="Page achat" class="mr-2"> Page achat</label>
+          <label class="flex items-center"><input type="checkbox" name="custom" value="App Android/iPhone" class="mr-2"> App Android/iPhone</label>
+          <label class="flex items-center"><input type="checkbox" name="custom" value="Panel web" class="mr-2"> Panel web</label>
+          <label class="flex items-center"><input type="checkbox" name="custom" value="Bot Discord" class="mr-2"> Bot Discord</label>
+          <label class="flex items-center"><input type="checkbox" name="custom" value="API Backend" class="mr-2"> API Backend</label>
         </div>
 
-        <label for="details">Détails / Options :</label>
-        <textarea id="details" rows="3" placeholder="Décrivez votre projet ou besoin..." required></textarea>
+        <h3 class="text-2xl font-semibold mb-4">Hébergement</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <label class="flex items-center"><input type="checkbox" name="custom" value="VPS 1" class="mr-2"> VPS 1</label>
+          <label class="flex items-center"><input type="checkbox" name="custom" value="VPS 2" class="mr-2"> VPS 2</label>
+          <label class="flex items-center"><input type="checkbox" name="custom" value="VPS 3" class="mr-2"> VPS 3</label>
+          <label class="flex items-center"><input type="checkbox" name="custom" value="WEB 1" class="mr-2"> WEB 1</label>
+          <label class="flex items-center"><input type="checkbox" name="custom" value="WEB 2" class="mr-2"> WEB 2</label>
+          <label class="flex items-center"><input type="checkbox" name="custom" value="PY 1" class="mr-2"> PY 1</label>
+        </div>
 
-        <label for="email">Votre email :</label>
-        <input type="email" id="email" placeholder="exemple@mail.com" required />
+        <h3 class="text-2xl font-semibold mb-4">Hébergement sur mesure</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+          <input type="number" name="custom" placeholder="CPU (coeurs)" class="p-2 bg-gray-700 rounded-lg text-white border border-gray-600">
+          <input type="number" name="custom" placeholder="RAM (GB)" class="p-2 bg-gray-700 rounded-lg text-white border border-gray-600">
+          <input type="number" name="custom" placeholder="Stockage (GB)" class="p-2 bg-gray-700 rounded-lg text-white border border-gray-600">
+        </div>
 
-        <button type="submit">Envoyer la demande</button>
-        <div id="orderMsg"></div>
-      </form>
+        <label for="details" class="block text-lg font-medium mb-2">Détails / Options</label>
+        <textarea id="details" rows="4" placeholder="Décrivez votre projet ou besoin..." required class="p-2 bg-gray-700 rounded-lg text-white border border-gray-600 w-full"></textarea>
+
+        <label for="email" class="block text-lg font-medium mb-2">Votre email</label>
+        <input type="email" id="email" placeholder="exemple@mail.com" required class="p-2 bg-gray-700 rounded-lg text-white border border-gray-600 w-full">
+
+        <button type="submit" class="btn-glow bg-green-500 text-white px-6 py-3 rounded-lg font-bold mt-4 w-full transition-all">Envoyer la demande</button>
+        <div id="orderMsg" class="text-center mt-4 text-green-400 font-bold"></div>
+      </div>
     </div>
   </div>
 
-  <footer>
-    © 2022-2025 Satanas1275. Tous droits réservés.
+  <footer class="bg-gray-900 text-center py-4 mt-12">
+    <p>Satanas1275 © 2022-2025 Tous droits réservés.</p>
   </footer>
 
-  <script src="webhook.js"></script>
-<script>
-  // Gère les commandes standard
-  document.querySelectorAll(".order-table button").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const row = btn.closest("tr");
-      const type = row.children[0].innerText;
-      const detail = row.children[1].innerText;
-      const prix = row.children[2].innerText;
+  <script>
+    // Gère les commandes standard
+    document.querySelectorAll(".order-table button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const row = btn.closest("tr");
+        const type = row.children[0].innerText;
+        const detail = row.children[1].innerText;
+        const prix = row.children[2].innerText;
 
-      const email = prompt("Entrez votre email pour commander :");
-      if (!email) return;
+        const email = prompt("Entrez votre email pour commander :");
+        if (!email) return;
+
+        const msg = {
+          content: `${email} a commandé un **${type}**\n> ${detail}\n> ${prix}\n\nStatut : *En attente*`
+        };
+
+        fetch("WEBHOOK_URL", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(msg)
+        }).then(() => {
+          alert("Commande envoyée ! Je vous réponds sous 24h.");
+        }).catch(() => {
+          alert("Erreur lors de l'envoi de la commande.");
+        });
+      });
+    });
+
+    // Gère le formulaire projet custom
+    document.getElementById("orderForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const details = document.getElementById("details").value;
+      const options = Array.from(document.querySelectorAll("input[name='custom']:checked")).map(el => el.value);
+      const customInputs = Array.from(document.querySelectorAll("input[name='custom'][type='number']")).map(el => `${el.placeholder}: ${el.value}`).filter(v => v.split(": ")[1]);
+
+      if (!email || (options.length === 0 && customInputs.length === 0) || !details) {
+        alert("Veuillez remplir tous les champs requis.");
+        return;
+      }
 
       const msg = {
-        content: `${email} a commandé un **${type}**\n> ${detail}\n> ${prix}\n\nStatut : *En attente*`
+        content: `${email} a commandé un projet **custom** avec :\n- ${[...options, ...customInputs].join("\n- ")}\n\n📄 Détails : ${details}\n\nStatut : *En attente*`
       };
 
-      fetch(WEBHOOK_URL, {
+      fetch("WEBHOOK_URL", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(msg)
       }).then(() => {
-        alert("Commande envoyée ! Je vous réponds sous 24h.");
+        document.getElementById("orderMsg").innerHTML = "Merci pour votre demande !<br>Je vous réponds sous 24h.";
+        e.target.reset();
       }).catch(() => {
-        alert("Erreur lors de l'envoi de la commande.");
+        document.getElementById("orderMsg").innerHTML = "Erreur lors de l'envoi. Réessayez plus tard.";
       });
     });
-  });
-
-  // Gère le formulaire projet custom
-  document.getElementById("orderForm").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = document.getElementById("email").value;
-    const details = document.getElementById("details").value;
-    const options = Array.from(document.querySelectorAll("input[name='custom']:checked")).map(el => el.value);
-
-    if (!email || options.length === 0 || !details) {
-      alert("Veuillez remplir tous les champs requis.");
-      return;
-    }
-
-    const msg = {
-      content: `${email} a commandé un projet **custom** avec :\n- ${options.join("\n- ")}\n\n📄 Détails : ${details}\n\nStatut : *En attente*`
-    };
-
-    fetch(WEBHOOK_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(msg)
-    }).then(() => {
-      document.getElementById("orderMsg").innerHTML = "Merci pour votre demande !<br>Je vous réponds sous 24h.";
-      e.target.reset();
-    }).catch(() => {
-      document.getElementById("orderMsg").innerHTML = "Erreur lors de l'envoi. Réessayez plus tard.";
-    });
-  });
-</script>
-
-
+  </script>
 </body>
 </html>
